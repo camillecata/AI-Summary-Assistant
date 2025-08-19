@@ -1,6 +1,6 @@
 from serpapi import GoogleSearch
 from dotenv import load_dotenv
-import os
+import streamlit as st
 
 load_dotenv()
 
@@ -9,7 +9,7 @@ def run_researcher_agent(topic):
     params = {
         "engine": "google",
         "q": topic,
-        "api_key": os.getenv("SERPAPI_API_KEY"),
+        "api_key": st.secrets["SERPAPI_API_KEY"],
         "num": 5
     }
 
